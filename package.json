@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "commander": "^10.0.1",
+    "playwright": "^1.33.0"
+  },
+  "name": "playwright-repl",
+  "description": "A repl used to interact with playwright.",
+  "version": "1.0.0",
+  "main": "repl.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "repl": "node repl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdavis61/playwright-repl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdavis61/playwright-repl/issues"
+  },
+  "homepage": "https://github.com/jdavis61/playwright-repl#readme"
+}
