@@ -19,7 +19,6 @@ replServer.defineCommand("chromium", {
   async action() {
     this.clearBufferedCommand();
     const page = await init(chromium, options);
-    await page.addInitScript({ path: "./playwright.config.js" });
     this.context.page = page;
     this.displayPrompt();
   },
