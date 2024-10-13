@@ -56,9 +56,10 @@ await page.screenshot({path: 'google.png'});
 
 ## Other CLI options
 
-| Command | Default Value | Description        |
-| ------- | ------------- | ------------------ |
-| timeout | 3000 ms       | Set global timeout |
+| Command | Default Value | Description                    |
+| ------- | ------------- | ------------------------------ |
+| timeout | 3000 ms       | Set global timeout             |
+| url     | Optional      | Pass URL for initial page load |
 
 ## Examples
 
@@ -66,4 +67,12 @@ await page.screenshot({path: 'google.png'});
 
 ```
 npm run repl -- --headed --timeout 10000
+.webkit
+```
+
+### Load page
+
+```
+npm run repl -- --headed  --url http://127.0.0.1:8080/test.html
+.chromium
 ```
