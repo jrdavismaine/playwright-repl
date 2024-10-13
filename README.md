@@ -7,20 +7,18 @@ A repl used to interact with playwright.
 ```
 git clone https://github.com/jdavis61/playwright-repl.git
 cd playwright-repl
-yarn
+npm i
 ```
 
 # Load REPL in headed mode.
 
 ```
-yarn repl --headed
 npm run repl -- --headed
 ```
 
 # Load REPL in headless mode.
 
 ```
-yarn repl
 npm run repl
 ```
 
