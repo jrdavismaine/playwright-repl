@@ -53,3 +53,17 @@ Enter these commands into the REPL.
 await page.goto('https://www.google.com');
 await page.screenshot({path: 'google.png'});
 ```
+
+## Other CLI options
+
+| Command | Default Value | Description        |
+| ------- | ------------- | ------------------ |
+| timeout | 3000 ms       | Set global timeout |
+
+## Examples
+
+### timeout 10 seconds
+
+```
+npm run repl -- --headed --timeout 10000
+```

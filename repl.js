@@ -3,14 +3,18 @@ const { program } = require("commander");
 const { chromium, firefox, webkit } = require("playwright");
 const init = require("./init");
 
-program.option("--headed");
-program.parse();
-const opts = program.opts();
-
 repl.builtinModules = ["playwright"];
 
+program.option("--headed");
+program.option("--timeout <value>", "Timeout in ms");
+program.parse();
+
+const opts = program.opts();
+const { headed, timeout } = opts;
+const DEFAULT_TIMEOUT = 4000;
 const options = {
-  headed: opts.headed,
+  headed,
+  timeout: timeout ?? DEFAULT_TIMEOUT,
 };
 
 const replServer = repl.start({ useColors: true, prompt: "playwright-repl> " });
