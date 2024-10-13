@@ -7,6 +7,7 @@ repl.builtinModules = ["playwright"];
 
 program.option("--headed");
 program.option("--timeout <value>", "Timeout in ms");
+program.option("--url <value>", "Load URL");
 program.parse();
 
 const opts = program.opts();
@@ -16,6 +17,9 @@ const options = {
   headed,
   timeout: timeout ?? DEFAULT_TIMEOUT,
 };
+if (opts.url) {
+  options["url"] = opts.url;
+}
 
 const replServer = repl.start({ useColors: true, prompt: "playwright-repl> " });
 replServer.defineCommand("chromium", {
