@@ -1,7 +1,13 @@
-module.exports = async (browserHandle, isHeaded) => {
-  const browser = isHeaded ?
-    await browserHandle.launch({ headless: false }) :
-    await browserHandle.launch();
+module.exports = async (browserHandle, options) => {
+  const { headed, timeout } = options;
+  const browser = await browserHandle.launch({
+    headless: !headed,
+  });
   const context = await browser.newContext();
-  return context.newPage();
+  const page = await context.newPage();
+  page.setDefaultTimeout(parseInt(timeout));
+  if (options.url) {
+    await page.goto(options.url);
+  }
+  return page;
 };

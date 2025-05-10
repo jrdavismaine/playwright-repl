@@ -7,20 +7,18 @@ A repl used to interact with playwright.
 ```
 git clone https://github.com/jdavis61/playwright-repl.git
 cd playwright-repl
-yarn
+npm i
 ```
 
 # Load REPL in headed mode.
 
 ```
-yarn repl --headed
 npm run repl -- --headed
 ```
 
 # Load REPL in headless mode.
 
 ```
-yarn repl
 npm run repl
 ```
 
@@ -48,4 +46,27 @@ await page.screenshot({path: 'google.png'});
 .webkit
 await page.goto('https://www.google.com');
 await page.screenshot({path: 'google.png'});
+```
+
+## Other CLI options
+
+| Command | Default Value | Description                    |
+| ------- | ------------- | ------------------------------ |
+| timeout | 3000 ms       | Set global timeout             |
+| url     | Optional      | Pass URL for initial page load |
+
+## Examples
+
+### timeout 10 seconds
+
+```
+npm run repl -- --headed --timeout 10000
+.webkit
+```
+
+### Load page
+
+```
+npm run repl -- --headed  --url http://127.0.0.1:8080/test.html
+.chromium
 ```

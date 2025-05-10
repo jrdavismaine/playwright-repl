@@ -1,13 +1,12 @@
 {
-  "dependencies": {
-    "commander": "^10.0.1",
-    "playwright": "^1.40.0"
-  },
   "name": "playwright-repl",
   "description": "A repl used to interact with playwright.",
   "version": "1.0.0",
   "main": "repl.js",
-  "devDependencies": {},
+  "dependencies": {
+    "commander": "^12.1.0",
+    "playwright": "^1.48.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "repl": "node repl"
