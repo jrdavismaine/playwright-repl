@@ -28,8 +28,6 @@ npm run repl
 
 ## Chrome
 
-Enter these commands into the REPL.
-
 ```
 .chromium
 await page.goto('https://www.google.com');
@@ -38,8 +36,6 @@ await page.screenshot({path: 'google.png'});
 
 ## Firefox
 
-Enter these commands into the REPL.
-
 ```
 .firefox
 await page.goto('https://www.google.com');
@@ -47,8 +43,6 @@ await page.screenshot({path: 'google.png'});
 ```
 
 ## Webkit
-
-Enter these commands into the REPL.
 
 ```
 .webkit
