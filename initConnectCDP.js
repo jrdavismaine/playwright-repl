@@ -5,12 +5,5 @@ module.exports = async (browserHandle, options) => {
   const browser = await browserHandle.connectOverCDP(cdpURL);
   const [context] = browser.contexts();
   const [page] = context.pages();
-  //   page.on("request", (req) => {
-  //     console.log(req.url());
-  //   });
-
-  //   page.on("response", (res) => {
-  //     console.log(res.url());
-  //   });
   return page;
 };

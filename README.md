@@ -5,9 +5,10 @@ A repl used to interact with playwright.
 # Install
 
 ```
-git clone https://github.com/jdavis61/playwright-repl.git
+git clone https://github.com/jrdavismaine/playwright-repl.git
 cd playwright-repl
-npm i
+npm install
+npx playwright install
 ```
 
 # Load REPL in headed mode.
@@ -24,7 +25,7 @@ npm run repl
 
 # Interact with playwright
 
-The following sections explain how to load chromium, webkit or firefox, connect to a chromium CDP sesssion.
+The following sections explain how to load chromium, webkit, firefox or connect to a chromium CDP sesssion.
 
 ## Chrome
 
@@ -52,20 +53,12 @@ await page.screenshot({path: 'google.png'});
 
 ## CDP
 
-Returns the first open tab, all other tabs are ignored.
-
-### Default URL
-
-URL defaults to localhost:9229 when the CDP environment variable is not set.
-
-### Remote
-
-URL of remote CDP session.
+Connect to a chromium browser instance using the CDP protocol. Set the CDP environment variable to connect to a remote CDP browser session. If not set, the default connection will be localhost:9229. Note that this feature only connects to the first tab of the first active CDP context.
 
 ```
 .cdp
 await page.title();
-await page.screenshot({path: '9229page.png'});
+await page.screenshot({path: 'cdp.png'});
 ```
 
 ## Other CLI options
