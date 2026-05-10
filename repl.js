@@ -2,6 +2,7 @@ const repl = require("node:repl");
 const { program } = require("commander");
 const { chromium, firefox, webkit } = require("playwright");
 const init = require("./init");
+const initCDP = require("./initConnectCDP.js");
 
 repl.builtinModules = ["playwright"];
 
@@ -17,16 +18,28 @@ const options = {
   headed,
   timeout: timeout ?? DEFAULT_TIMEOUT,
 };
+
 if (opts.url) {
   options["url"] = opts.url;
 }
 
 const replServer = repl.start({ useColors: true, prompt: "playwright-repl> " });
+
 replServer.defineCommand("chromium", {
   help: "Load chromium",
   async action() {
     this.clearBufferedCommand();
     const page = await init(chromium, options);
+    this.context.page = page;
+    this.displayPrompt();
+  },
+});
+
+replServer.defineCommand("cdp", {
+  help: "Connect to a chromium CDP session.",
+  async action() {
+    this.clearBufferedCommand();
+    const page = await initCDP(chromium);
     this.context.page = page;
     this.displayPrompt();
   },
