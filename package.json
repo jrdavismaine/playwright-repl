@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "main": "repl.js",
   "dependencies": {
-    "commander": "^12.1.0",
-    "playwright": "^1.48.0"
+    "commander": "14.0.3",
+    "playwright": "1.59.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
